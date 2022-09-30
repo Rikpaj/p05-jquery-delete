@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riki pajri</title>
+</head>
+<body>    
+    <h1 style="text-align: center;">Teman-Teman Ikmi</h1>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        #judul{
+            background-color: #5CB8E4;
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 60%;
+            height: auto;
+        }
+        #judul th, #judul td{
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        #judul th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            background-color:#FEDB39;
+        }
+        .menghapus {
+            background-color: aqua;
+        }
+        .menghapus:hover {
+            background-color:red;
+        }
+        .nomer{
+            background-color:#5CB8E4;
+        }
+        .alamat {
+            background-color: #5CB8E4;
+        }
+        .alamat:hover{
+            background-color:  #ddd;
+        }
+        .nama_mhs{
+            background-color: #5CB8E4;
+        }
+        .nama_mhs:hover{
+            background-color: #ddd;
+        }
+    </style>
+
+    <table align="center" id="judul">
+        <tr class="tabel">
+            <th style="width:5%;">NO</th>
+            <th>NAMA</th>
+            <th>ALAMAT</th>
+            <th>AKSI</th>
+        </tr>
+        <tr id="row__1">
+            <td class="nomer">1.</td>
+            <td class="nama_mhs">Iip imron daipah</td>
+            <td class="alamat">Ciamis</td>
+            <td class="menghapus" id="hapus__1">Hapus</td>
+        </tr>
+        <tr id="row__2">
+            <td class="nomer">2.</td>
+            <td class="nama_mhs">Dimas nugraha putra</td>
+            <td class="alamat">Ciamis</td>
+            <td class="menghapus" id="hapus__2">Hapus</td>
+        </tr>
+        <tr id="row__3">
+            <td class="nomer">3.</td>
+            <td class="nama_mhs">Rizki ramdani</td>
+            <td class="alamat">Ciamis</td>
+            <td class="menghapus" id="hapus__3">Hapus</td>
+        </tr>
+        <tr id="row__4">
+            <td class="nomer">4.</td>
+            <td class="nama_mhs">Ramdan hermawan</td>
+            <td class="alamat">Ciamis</td>
+            <td class="menghapus" id="hapus__4">Hapus</td>
+        </tr>
+        <tr id="row__5">
+            <td class="nomer">5.</td>
+            <td class="nama_mhs">Akmal fauzan</td>
+            <td class="alamat">Ciamis</td>
+            <td class="menghapus" id="hapus__5">Hapus</td>
+        </tr>
+        <tr id="row__6">
+            <td class="nomer">6.</td>
+            <td class="nama_mhs">Hatmara sukma</td>
+            <td class="alamat">Ciamis</td>
+            <td class="menghapus" id="hapus__6">Hapus</td>
+        </tr>
+        <tr id="row__7">
+            <td class="nomer">7.</td>
+            <td class="nama_mhs">Yasni optarina</td>
+            <td class="alamat">Ciamis</td>
+            <td class="menghapus" id="hapus__7">Hapus</td>
+        </tr>
+        <tr id="row__8">
+            <td class="nomer">8.</td>
+            <td class="nama_mhs">Akmal fauzan</td>
+            <td class="alamat">Ciamis</td>
+            <td class="menghapus" id="hapus__8">Hapus</td>
+        </tr>
+        <tr id="row__9">
+            <td class="nomer">9.</td>
+            <td class="nama_mhs">Rifki nugraha</td>
+            <td class="alamat">Ciamis</td>
+            <td class="menghapus" id="hapus__9">Hapus</td>
+        </tr>
+        <tr id="row__10">
+            <td class="nomer">10.</td>
+            <td class="nama_mhs">Rian nugraha</td>
+            <td class="alamat">Ciamis</td>
+            <td class="menghapus" id="hapus__10">Hapus</td>
+        </tr>
+    </table>
+    <script>
+        $(document).ready(function(){
+            //alert(0)
+            $('.nama_mhs').click(function(){
+                // alert(1)
+                let isi = $(this).text();
+                alert(isi);
+
+                let isi2 = prompt('ubah dengan:',isi);
+                if(!isi2) return;
+                alert(isi2);
+
+                $(this).text(isi2);
+            })
+                
+                $('.menghapus').click(function(){
+                    //alert(1);
+                    let yakin = confirm('yakin mau menghapus?');
+                    if(!yakin) return;
+
+                    let id = $(this).prop('id');
+                    //alert(id);
+
+                    let rid = id.split('__');
+                    let baris_ke = rid[1];
+
+                    //alert(baris_ke);
+
+                    $('#row__'+baris_ke).slideUp()
+
+                    alert('yakin nih :)')
+            })
+        })
+    </script>
+</body>
+</html>
